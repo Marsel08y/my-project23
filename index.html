@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Logic Game Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="blob-c">
+        <div class="shape-blob one"></div>
+        <div class="shape-blob two"></div>
+        <div class="shape-blob three"></div>
+    </div>
+
+    <div id="auth-overlay" class="modal-overlay">
+        <div class="auth-card">
+            <div class="auth-icon">⚡</div>
+            <h2>Вход в игру</h2>
+            <p>Введите имя для таблицы рекордов</p>
+            <div class="input-wrapper">
+                <input type="text" id="username-input" placeholder="Ваш ник..." maxlength="12">
+                <div class="input-line"></div>
+            </div>
+            <button id="start-game-btn" class="start-btn">ПОЕХАЛИ</button>
+        </div>
+    </div>
+
+    <div class="side-rating">
+        <div class="rating-header">🏆 ТОП ИГРОКОВ</div>
+        <div id="leaderboard-list-side"></div>
+    </div>
+
+    <div class="app-container">
+        <div class="difficulty-bar">
+            <button class="diff-btn active easy" data-level="easy">ЛЕГКО</button>
+            <button class="diff-btn medium" data-level="medium">СРЕДНЕ</button>
+            <button class="diff-btn hard" data-level="hard">СЛОЖНО</button>
+        </div>
+
+        <div class="main-card">
+            <div class="user-badge" id="display-username">Игрок</div>
+            <div class="stats-row">
+                <div class="stat-item score-color">
+                    <span class="stat-label">ОЧКИ</span>
+                    <span id="score" class="stat-val">0</span>
+                </div>
+                <div class="timer-box">
+                    <svg width="80" height="80">
+                        <circle class="circle-bg" cx="40" cy="40" r="36"></circle>
+                        <circle id="timer-bar" class="circle-prog" cx="40" cy="40" r="36"></circle>
+                    </svg>
+                    <div id="timer-text">30</div>
+                </div>
+                <div class="stat-item correct-color">
+                    <span class="stat-label">ВЕРНО</span>
+                    <span id="correct" class="stat-val">0</span>
+                </div>
+            </div>
+
+            <div class="game-content">
+                <div id="category" class="cat-tag">МАТЕМАТИКА</div>
+                <h1 id="question">Загрузка...</h1>
+                <div class="input-group">
+                    <input type="text" id="answer-input" placeholder="Ответ..." autocomplete="off">
+                </div>
+            </div>
+
+            <div id="feedback" class="msg-box"></div>
+
+            <div class="controls">
+                <button id="check-btn" class="main-btn">ПРОВЕРИТЬ</button>
+                <div class="icon-btns">
+                    <button id="help-btn" class="icon-btn help-clr">💡</button>
+                    <button id="next-btn" class="icon-btn next-clr">➡</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
